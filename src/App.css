@@ -7,8 +7,8 @@
 }
 
 .wrapper {
-  min-width: 100vw;
-  min-height: 10000px;
+  width: 100vw;
+  min-height: 2000px;
   background-color: #00040F;
   display: flex;
   justify-content: center;
@@ -16,6 +16,7 @@
 .wrapper__content {
   width: 81.5%;
   min-height: 100vh;
+  border: 1px solid yellow;
 }
 
 @media (max-width: 1024px) {

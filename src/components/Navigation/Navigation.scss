@@ -68,46 +68,67 @@
     }
     .navigation-mob{
         display: block;
+        align-items: center;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        position: relative;
         img{
             width: 50px;
             height: 50px;
-            position: absolute;
-            right: 10px;
-            top: 20px;
             transition: all 0.5s;
+            position: absolute;
+            top: 2px;
+            right: 10px;
             &:hover{
                 transform: scale(1.1);
                 transition: all 0.5s;
                 cursor: pointer;
             }
         }
-        &__nav{
+        &__nonActive{
             width: 150px;
             height: 200px;
             border-radius: 20px;
             background-color: #5CE1E6;
             position: absolute;
-            right: 10px;
-            top: -205px;
+            right: 0px;
+            top: -220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            &_close{
+            &_open{
+                width: 150px;
+                height: 200px;
+                background-color: #5CE1E6;
+                border-radius: 20px;
                 position: absolute;
-                right: 25px;
-                top: -10px;
-                cursor: pointer;
+                right: 0;
+                animation: opening 0.5s ease forwards;
+                margin-top: 5px;
+            }
+            &_close{
+                width: 150px;
+                height: 200px;
+                background-color: #5CE1E6;
+                right: 0;
+                border-radius: 20px;
+                position: absolute;
+                animation: exit 0.5s ease forwards;
+            }
+            &_imgClose{
+                color: rgb(70, 70, 70);
                 font-weight: 600;
                 font-size: 18px;
-                color: rgb(48, 48, 48);
-                animation: closed 0.5s ease forwards;
+                position: absolute;
+                right: 20px;
+                top: -10px;
             }
             &_menu{
-                width: 100px;
+                width: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: end;
                 flex-direction: column;
+                margin-top: 20px;
                 p{
                     width: 100%;
                     text-align: center;
@@ -122,26 +143,20 @@
                 }
             }
         }
-        .open{
-            animation: slideIn 0.5s ease forwards;
-        }
-        .close{
-            animation: slideOut 0.5s ease forwards;
-        }
-        @keyframes slideIn {
+        @keyframes opening {
             0% {
-                top: -205px;
+                top: -220px;
             }
             100% {
-                top: 20px;
+                top: 5px;
             }
         }
-        @keyframes slideOut {
+        @keyframes exit {
             0% {
-                top: 20px;
+                top: 5px;
             }
             100% {
-                top: -205px;
+                top: -220px;
             }
         }
     }
